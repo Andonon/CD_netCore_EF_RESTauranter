@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Reviews Page";
+}
+<div id="reviews">
+    <h1>All Reviews (by date of visit)</h1>
+    @foreach(var review in ViewBag.AllReviews)
+    {
+        <hr><br>
+        <h4>Review for: @review.restaurant</h4>
+        <h4>@review.stars star</h4>
+        <h5>Reviewer: @review.reviewer, @review.dateofvisit.ToString("MM/dd/yyyy")</h5>
+        <p>@review.review</p>
+        <br><hr>
+    }
+</div>
+<a href="/">Home</a>
